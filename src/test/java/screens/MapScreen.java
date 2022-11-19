@@ -27,7 +27,6 @@ public class MapScreen extends BaseScreen {
         super(driver);
     }
 
-    // AndroidElements
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*categoryTitle\")")
     private AndroidElement categoryList;
 

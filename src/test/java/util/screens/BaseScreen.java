@@ -46,60 +46,6 @@ public abstract class BaseScreen {
                 driver, Duration.ofSeconds(0)), this);
     }
 
-
-    /**
-     * Scroll down (From Top to Bottom).
-     *
-     * @param swipes the swipes
-     * @author Hans.Marquez
-     */
-    public void scrollDown(int swipes) {
-        String locator = "new UiScrollable(new UiSelector().resourceIdMatches(\".*ontainer.*\")).flingToEnd(1)";
-        scroll(locator, swipes);
-    }
-
-    /**
-     * Scroll Up (From Bottom to Top).
-     *
-     * @param swipes the swipes
-     * @author Hans.Marquez
-     */
-    public void scrollUp(int swipes) {
-        String locator = "new UiScrollable(new UiSelector().resourceIdMatches(\".*ontainer.*\")).flingToBeginning(1)";
-        scroll(locator, swipes);
-    }
-
-
-    /**
-     * Scroll.
-     *
-     * @param locator the locator
-     * @param swipes  the swipes
-     */
-    public void scroll(String locator, int swipes) {
-        int swipesAmount = 0;
-        while (swipesAmount < swipes) {
-            try {
-                driver.findElementByAndroidUIAutomator(locator);
-                swipesAmount++;
-            } catch (Exception e) {
-                swipesAmount++;
-            }
-        }
-    }
-
-    /**
-     * Scroll to the text attribute received by parameter.
-     *
-     * @param text : String
-     * @author Arley.Bolivar
-     */
-    public void scrollToText(String text) {
-        String automator = "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().textContains(\"%s\"))";
-        AndroidElement textOnElement = driver.findElementByAndroidUIAutomator(format(automator, text));
-        log.info(textOnElement.getText());
-    }
-
     /**
      * Swipe vertical.
      *
@@ -109,8 +55,8 @@ public abstract class BaseScreen {
     public void swipeVertical(float percentage) {
         Dimension windowSize = driver.manage().window().getSize();
         TouchAction ta = new TouchAction(driver);
-        ta.press(PointOption.point(207, 582)).moveTo(PointOption.point(8,
-                -360)).release().perform();
+        ta.press(PointOption.point(207, 582)).moveTo(PointOption.point(
+                8,-360)).release().perform();
     }
 
 

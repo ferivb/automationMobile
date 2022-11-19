@@ -4,7 +4,7 @@
 	"platformVersion": "11",
 	"appPackage": "com.disney.wdpro.dlr",
 	"appActivity": "com.disney.wdpro.park.activities.SplashActivity",
-	"app": "/Users/nayvir.zerpa/Downloads/disneyland-7-4.apk",
+	"app": "C:/Users/felipe.rivas/Downloads/DisneylandÂ®_7.17_Apkpure.apk",
 	"automationName": "UiAutomator2",
 	"autoGrantPermissions": "true",
     "skipServerInstallation": "true"

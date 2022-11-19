@@ -25,12 +25,13 @@ public class DashBoardScreen extends BaseScreen {
         super(driver);
     }
 
-    // AndroidElements
-    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Close\")")
+    @AndroidFindBy(uiAutomator = "")
     private AndroidElement dismissPreferenceUpdateButton;
 
+    @AndroidFindBy(uiAutomator = "")
+    private AndroidElement dismissWelcome;
+
     @HowToUseLocators(androidAutomation = ALL_POSSIBLE)
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*tab_icon.*\").descriptionContains(\"Map\")")
     @AndroidFindBy(uiAutomator = "//android.widget.ImageView[contains(@content-desc,\"Map\")]")
     private AndroidElement mapButton;
 
@@ -39,7 +40,12 @@ public class DashBoardScreen extends BaseScreen {
      * Navigate to Login Screen from DashBoard Screen.
      */
     public MapScreen goToMapScreen() {
-        click(dismissPreferenceUpdateButton);
+        if (this.isElementAvailable(dismissWelcome, 25)){
+            click(dismissWelcome);
+        }
+        if (this.isElementAvailable(dismissPreferenceUpdateButton, 25)){
+            click(dismissPreferenceUpdateButton);
+        }
         click(mapButton);
         return new MapScreen(driver);
     }
