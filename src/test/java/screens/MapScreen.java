@@ -6,6 +6,9 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.HowToUseLocators;
 import util.screens.BaseScreen;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static io.appium.java_client.pagefactory.LocatorGroupStrategy.ALL_POSSIBLE;
 
 // TODO: Auto-generated Javadoc
@@ -41,6 +44,12 @@ public class MapScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Show List\")")
     private AndroidElement showListButton;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.LinearLayout\").descriptionMatches(\".*button\")")
+    private List<AndroidElement> categories;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(android.widget.LinearLayout).descriptionStartsWith(\"Hotels\")")
+    private AndroidElement hotelsCategory;
+
     /**
      * @author Hans.Marquez
      * return true if Category List element is displayed in screen, otherwise false.
@@ -63,6 +72,27 @@ public class MapScreen extends BaseScreen {
      */
     public boolean showListIsDisplayed() {
         return isElementAvailable(showListButton);
+    }
+
+    public void tapOnCategories(){
+        click(categoryList);
+    }
+
+    public boolean areCategoriesDifferent(){
+        List<String> trimmedCategories = new ArrayList<>();
+        for (AndroidElement i: categories) {
+            String category = i.getAttribute("content-desc").split(",")[0];
+            trimmedCategories.add(category);
+        }
+        return trimmedCategories.stream().distinct().count() == trimmedCategories.size();
+    }
+
+    public boolean hotelsIsDisplayed() {
+        return isElementAvailable(hotelsCategory);
+    }
+
+    public String getDefaultCategoryText(){
+        return categoryList.getText();
     }
 
 }
