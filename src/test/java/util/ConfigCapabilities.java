@@ -15,13 +15,13 @@ import java.io.FileReader;
  */
 public class ConfigCapabilities {
 
-    private static final String DEVICE_NAME = "emulator-5554";
-    private static final String PLATFORM_NAME = "Android";
-    private static final String PLATFORM_VERSION = "11";
-    private static final String APP_PACKAGE = "com.disney.wdpro.dlr";
-    private static final String APP_ACTIVITY = "com.disney.wdpro.park.activities.SplashActivity";
+    private static final String DEVICE_NAME = "deviceName";
+    private static final String PLATFORM_NAME = "platformName";
+    private static final String PLATFORM_VERSION = "platformVersion";
+    private static final String APP_PACKAGE = "appPackage";
+    private static final String APP_ACTIVITY = "appActivity";
     private static final String JSON_FILE_PATH = "src/test/resources/mobile_capabilities.json";
-    private static final String APP = "C:/Users/felipe.rivas/Downloads/DisneylandÂ®_7.17_Apkpure.apk";
+    private static final String APP = "app";
     private static final String AUTOMATION_NAME = "automationName";
     private static final JsonParser parser = new JsonParser();
 
