@@ -35,18 +35,32 @@ public class DashBoardScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().className(android.widget.ImageView).descriptionContains(\"Map\")")
     private AndroidElement mapButton;
 
-    /**
-     * @author Hans.Marquez
-     * Navigate to Login Screen from DashBoard Screen.
-     */
-    public MapScreen goToMapScreen() {
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(android.widget.ImageView).descriptionContains(\"More\")")
+    private AndroidElement moreOptionsButton;
+
+    public void skipWelcomeAndUpdates(){
         if (this.isElementAvailable(dismissWelcome, 25)){
             click(dismissWelcome);
         }
         if (this.isElementAvailable(dismissPreferenceUpdateButton, 25)){
             click(dismissPreferenceUpdateButton);
         }
+    }
+
+    /**
+     * @author Hans.Marquez
+     * Navigate to Login Screen from DashBoard Screen.
+     */
+    public MapScreen goToMapScreen() {
+        skipWelcomeAndUpdates();
         click(mapButton);
         return new MapScreen(driver);
     }
+
+    public MoreOptionsScreen goToMoreOptionsScreen() {
+        skipWelcomeAndUpdates();
+        click(moreOptionsButton);
+        return new MoreOptionsScreen(driver);
+    }
+
 }

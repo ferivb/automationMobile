@@ -50,6 +50,7 @@ public class MapScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().className(android.widget.LinearLayout).descriptionStartsWith(\"Hotels\")")
     private AndroidElement hotelsCategory;
 
+
     /**
      * @author Hans.Marquez
      * return true if Category List element is displayed in screen, otherwise false.
