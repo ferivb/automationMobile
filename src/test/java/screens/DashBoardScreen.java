@@ -38,6 +38,12 @@ public class DashBoardScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().className(android.widget.ImageView).descriptionContains(\"More\")")
     private AndroidElement moreOptionsButton;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(android.widget.ImageView).descriptionStartsWith(\"Buy\")")
+    private AndroidElement addPlansButton;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(android.widget.TextView).textContains(\"Check Dining Availability\")")
+    private AndroidElement dinnerReservationButton;
+
     public void skipWelcomeAndUpdates(){
         if (this.isElementAvailable(dismissWelcome, 25)){
             click(dismissWelcome);
@@ -61,6 +67,18 @@ public class DashBoardScreen extends BaseScreen {
         skipWelcomeAndUpdates();
         click(moreOptionsButton);
         return new MoreOptionsScreen(driver);
+    }
+
+    public boolean addPlansIsDisplayed(){
+        return isElementAvailable(addPlansButton);
+    }
+
+    public void clickAddPlansButton(){
+        click(addPlansButton);
+    }
+
+    public boolean dinnerReservationIsDisplayed(){
+        return isElementAvailable(dinnerReservationButton);
     }
 
 }
