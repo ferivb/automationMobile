@@ -4,6 +4,8 @@
   <test thread-count="1" name="Test">
     <classes>
       <class name="tests.CategoryListTest"/>
+      <class name="tests.PrivacyAndLegalTest"/>
+      <class name="tests.AddPlansTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
