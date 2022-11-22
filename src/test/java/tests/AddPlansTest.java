@@ -8,6 +8,11 @@ import util.tests.BaseMobileTest;
 
 public class AddPlansTest extends BaseMobileTest {
 
+    /**
+     * Validate the Add Plans navigation.
+     *
+     * @author Felipe.Rivas
+     */
     @Description(value = "Testing if some elements are present in Add Plans")
     @Test()
     public void addPlansTest() {

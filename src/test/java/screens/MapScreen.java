@@ -75,10 +75,21 @@ public class MapScreen extends BaseScreen {
         return isElementAvailable(showListButton);
     }
 
+    /**
+     * Taps on the categories button
+     *
+     * @author Felipe.Rivas
+     */
     public void tapOnCategories(){
         click(categoryList);
     }
 
+    /**
+     * Checks all the categories to see if every one is unique
+     *
+     * @return true if all categories are unique or false if there is duplicates
+     * @author Felipe.Rivas
+     */
     public boolean areCategoriesDifferent(){
         List<String> trimmedCategories = new ArrayList<>();
         for (AndroidElement i: categories) {
@@ -88,10 +99,22 @@ public class MapScreen extends BaseScreen {
         return trimmedCategories.stream().distinct().count() == trimmedCategories.size();
     }
 
+    /**
+     * Checks if the button for Hotels is present
+     *
+     * @return boolean
+     * @author Felipe.Rivas
+     */
     public boolean hotelsIsDisplayed() {
         return isElementAvailable(hotelsCategory);
     }
 
+    /**
+     * Retrieves the name of the category by default
+     *
+     * @return String: the text with the default category
+     * @author Felipe.Rivas
+     */
     public String getDefaultCategoryText(){
         return categoryList.getText();
     }

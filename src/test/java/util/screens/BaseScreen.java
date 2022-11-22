@@ -133,6 +133,11 @@ public abstract class BaseScreen {
         }
     }
 
+    /**
+     * Swipes down indefinitely
+     *
+     * @author Felipe.Rivas
+     */
     public void swipeDown()
     {
         Dimension dimension = driver.manage().window().getSize();

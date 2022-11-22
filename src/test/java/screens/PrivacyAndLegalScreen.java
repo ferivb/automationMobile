@@ -5,6 +5,11 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import util.screens.BaseScreen;
 
+/**
+ * Privacy & Legal Screen
+ *
+ * @author Felipe.Rivas
+ */
 public class PrivacyAndLegalScreen extends BaseScreen {
     /**
      * Constructor method for standard screens object.
@@ -37,30 +42,72 @@ public class PrivacyAndLegalScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().className(android.widget.TextView).textContains(\"Electronic\")")
     private AndroidElement electronicTOS;
 
+    /**
+     * Checks whether the title is displayed or not
+     *
+     * @return boolean: true if displayed, false if not
+     * @author Felipe.Rivas
+     */
     public boolean titleIsDisplayed(){
         return isElementAvailable(titleText);
     }
 
+    /**
+     * Checks whether the Privacy Policy option is displayed or not
+     *
+     * @return boolean: true if displayed, false if not
+     * @author Felipe.Rivas
+     */
     public boolean privacyPolicyIsDisplayed(){
         return isElementAvailable(privacyPolicy);
     }
 
+    /**
+     * Checks whether the Terms of Use option is displayed or not
+     *
+     * @return boolean: true if displayed, false if not
+     * @author Felipe.Rivas
+     */
     public boolean termsOfUseIsDisplayed(){
         return isElementAvailable(termsOfUse);
     }
 
+    /**
+     * Checks whether the Supplemental TOS option is displayed or not
+     *
+     * @return boolean: true if displayed, false if not
+     * @author Felipe.Rivas
+     */
     public boolean supplementalIsDisplayed(){
         return isElementAvailable(supplemental);
     }
 
+    /**
+     * Checks whether the Legal Notices option is displayed or not
+     *
+     * @return boolean: true if displayed, false if not
+     * @author Felipe.Rivas
+     */
     public boolean legalNoticesIsDisplayed(){
         return isElementAvailable(legalNotices);
     }
 
+    /**
+     * Checks whether the Property Rules option is displayed or not
+     *
+     * @return boolean: true if displayed, false if not
+     * @author Felipe.Rivas
+     */
     public boolean propertyRulesIsDisplayed(){
         return isElementAvailable(propertyRules);
     }
 
+    /**
+     * Checks whether the Electronic TOS option is displayed or not
+     *
+     * @return boolean: true if displayed, false if not
+     * @author Felipe.Rivas
+     */
     public boolean electronicTOSIsDisplayed(){
         return isElementAvailable(electronicTOS);
     }

@@ -44,6 +44,11 @@ public class DashBoardScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().className(android.widget.TextView).textContains(\"Check Dining Availability\")")
     private AndroidElement dinnerReservationButton;
 
+    /**
+     * Method to skip the popups on app launch
+     *
+     * @author Hans.Marquez, Felipe.Rivas
+     */
     public void skipWelcomeAndUpdates(){
         if (this.isElementAvailable(dismissWelcome, 25)){
             click(dismissWelcome);
@@ -63,20 +68,43 @@ public class DashBoardScreen extends BaseScreen {
         return new MapScreen(driver);
     }
 
+    /**
+     * Navigate to the more options screen from dashboard
+     *
+     * @return new instance of the more options screen
+     * @author Felipe.Rivas
+     */
     public MoreOptionsScreen goToMoreOptionsScreen() {
         skipWelcomeAndUpdates();
         click(moreOptionsButton);
         return new MoreOptionsScreen(driver);
     }
 
+    /**
+     * Checks if the button Add Plans is displayed
+     *
+     * @return boolean
+     * @author Felipe.Rivas
+     */
     public boolean addPlansIsDisplayed(){
         return isElementAvailable(addPlansButton);
     }
 
+    /**
+     * Clicks the addPlansButton
+     *
+     * @author Felipe.Rivas
+     */
     public void clickAddPlansButton(){
         click(addPlansButton);
     }
 
+    /**
+     * Checks if the button to reserve dinner is available
+     *
+     * @return boolean
+     * @author Felipe.Rivas
+     */
     public boolean dinnerReservationIsDisplayed(){
         return isElementAvailable(dinnerReservationButton);
     }

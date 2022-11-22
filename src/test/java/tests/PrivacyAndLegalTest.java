@@ -10,6 +10,11 @@ import util.tests.BaseMobileTest;
 
 public class PrivacyAndLegalTest extends BaseMobileTest {
 
+    /**
+     * Validate the Privacy & Legal options
+     *
+     * @author Felipe.Rivas
+     */
     @Description("Privacy & Legal Navigation Tests")
     @Test
     public void privacyAndLegalTest(){
