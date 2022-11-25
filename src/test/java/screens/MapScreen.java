@@ -109,7 +109,7 @@ public class MapScreen extends BaseScreen {
         return isElementAvailable(hotelsCategory);
     }
 
-    /**
+        /**
      * Retrieves the name of the category by default
      *
      * @return String: the text with the default category

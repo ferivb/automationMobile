@@ -75,9 +75,9 @@ public class MoreOptionsScreen extends BaseScreen {
      * @author Felipe.Rivas
      */
     public void swipeToPrivacyAndLegal(){
-        while(!isPrivacyAndLegalDisplayed()){
+        do {
             swipeDown();
-        }
+        } while(!isPrivacyAndLegalDisplayed());
     }
 
     /**
